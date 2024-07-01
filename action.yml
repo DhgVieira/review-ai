@@ -19,6 +19,10 @@ runs:
       run: pip install -r ${{ github.action_path }}/src/requirements.txt
       shell: bash
 
+    - name: Install git
+      run: apt get install git
+      shell: bash
+
     - name: Run Reviewer Script
       env:
         GITHUB_HEAD_REF: ${{ github.head_ref }}
