@@ -20,7 +20,7 @@ runs:
       shell: bash
 
     - name: Install git
-      run: apt get install git
+      run: apt-get install git
       shell: bash
 
     - name: Run Reviewer Script
