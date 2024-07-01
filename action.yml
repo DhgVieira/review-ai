@@ -2,6 +2,11 @@ name: "Ai Review"
 description: "Git action AI review"
 author: "dhgvieira"
 
+inputs:
+  secrets:
+    description: git token default
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -20,7 +25,7 @@ runs:
         GITHUB_BASE_REF: ${{ github.base_ref }}
         CHATGPT_KEY: 12312312321
         CHATGPT_MODEL: gpt-3.5-turbo
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.secrets.GITHUB_TOKEN }}
         TARGET_EXTENSIONS: java
         REPO_OWNER: ${{ github.repository_owner }}
         REPO_NAME: ${{ github.event.repository.name }}
